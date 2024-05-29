@@ -27,8 +27,8 @@ def fromDataToBins(df, bins):
         df.loc[i,'Bin'] = bin_index
 
 ### defineOutliersFromNormCounts() is the main function that reads from a csv file normalized reads of counts, each biological sample in a separate columns and calculates for each gene if it is a variable gene or not based on the dispersion and mean expression of each gene
-#The normalized reads are calculated by DESeq2 before running defineOutliersFromNormCounts() function
-#The functions saves a plot of dispersion vs. mean expression and an excel table with the infromation for each gene if it is a dispersion outliers, i.e., a variable gene
+### The normalized reads are calculated by DESeq2 before running defineOutliersFromNormCounts() function
+### The functions saves a plot of dispersion vs. mean expression and an excel table with the infromation for each gene if it is a dispersion outliers, i.e., a variable gene
 def defineOutliersFromNormCounts():
     df = pd.read_csv(r"I:\My_Microcolony_seq_project\My_normalized_counts.txt", sep="\t")
 
