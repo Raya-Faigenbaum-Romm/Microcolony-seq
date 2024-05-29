@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 
-''' create_bins returns an equal-width (distance) partitioning. It returns an ascending list of tuples, representing the intervals. '''
+# create_bins returns an equal-width (distance) partitioning. It returns an ascending list of tuples, representing the intervals. 
 def create_bins(lower_bound, width, quantity):
     bins = []
     for low in range(lower_bound,
