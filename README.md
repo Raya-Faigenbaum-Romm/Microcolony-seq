@@ -14,6 +14,8 @@ def create_bins(lower_bound, width, quantity):
     return bins
 
 ### find_bin() gets a number and bins list. bins is a list of tuples, like [(0,20), (20, 40), (40, 60)], binning returns the smallest index i of bins so that bin[i][0] <= value < bin[i][1]
+
+
 def find_bin(value, bins):
     for i in range(0, len(bins)):
         if bins[i][0] <= value < bins[i][1]:
@@ -21,6 +23,8 @@ def find_bin(value, bins):
     return -1
 
 ### fromDataToBins gets a df and bins and assigns a bin for each gene based on its mean expression (log10(basemean))
+
+
 def fromDataToBins(df, bins):
     for i, row in df.iterrows():  # Initialize for loop
         bin_index = find_bin(float(row['log10_basemean']) * 100, bins)
@@ -29,6 +33,8 @@ def fromDataToBins(df, bins):
 ### defineOutliersFromNormCounts() is the main function that reads from a csv file normalized reads of counts, each biological sample in a separate columns and calculates for each gene if it is a variable gene or not based on the dispersion and mean expression of each gene
 ### The normalized reads are calculated by DESeq2 before running defineOutliersFromNormCounts() function
 ### The functions saves a plot of dispersion vs. mean expression and an excel table with the infromation for each gene if it is a dispersion outliers, i.e., a variable gene
+
+
 def defineOutliersFromNormCounts():
     df = pd.read_csv(r"I:\My_Microcolony_seq_project\My_normalized_counts.txt", sep="\t")
     #Part 1: calculate basemean, variance, dispersion.
