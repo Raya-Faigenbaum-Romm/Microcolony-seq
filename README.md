@@ -31,7 +31,6 @@ def fromDataToBins(df, bins):
 ### The functions saves a plot of dispersion vs. mean expression and an excel table with the infromation for each gene if it is a dispersion outliers, i.e., a variable gene
 def defineOutliersFromNormCounts():
     df = pd.read_csv(r"I:\My_Microcolony_seq_project\My_normalized_counts.txt", sep="\t")
-
     #Part 1: calculate basemean, variance, dispersion.
     #Speficy the names of the columns containing the normalized reads counts for each sample in the df
     #Calcualte mean expression for each gene and save it in the basemean column
